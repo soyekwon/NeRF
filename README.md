@@ -1,5 +1,5 @@
 # NeRF
-<code> NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis 논문 읽고 코드로 구현 <code/>
+<code>NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis 논문 읽고 코드로 구현<code/>
 
 ## Introduction
 
@@ -12,13 +12,10 @@ input은 sparse한 이미지와 그에 해당하는 camera의 pose가 주어지�
 ![](https://velog.velcdn.com/images/soyekwon/post/3bbd1c80-83d6-42f9-9491-f4399347eee6/image.png)
 
 새로운 view를 렌더링하기 위해서 카메라의 위치 x,y,z와 이에 해당하는 방향 정보인 파이와 세타를 input으로 네트워크에 넣어주면 output인 color와 밀도가 나오게 됩니다. 
-
 그런 다음, 볼륨 렌더링 기술을 사용하여 이러한 색상과 밀도를 축적하여 2D 이미지를 나타낼 수 있습니다.
-
 볼륨 렌더링에 대해서는 related work에서 설명하겠습니다.
 
 그리고 좀 더 네트워크가 효율적으로 고해상도의 표현을 학습하기 위해 positional encoding과 계층화된 sampling을 사용합니다. 이 두가지 방법은 뒤에서 좀 더 자세히 설명하겠습니다. 
-
 이 두 가지 방법을 사용한 결과 **고해상도의 사실적인 새로운 view를 렌더링할 수 있는 최초의 continuous neural scene 표현 방법을 제시**하였습니다. 
 
 <br/>
@@ -31,7 +28,6 @@ input은 sparse한 이미지와 그에 해당하는 camera의 pose가 주어지�
 ![](https://velog.velcdn.com/images/soyekwon/post/c910818b-58aa-4ae4-9bd8-4793b1343696/image.png)
 
 Neural volume 논문이 나오기 전에는 불투명한 물체에 대해서만 recon가능, 내부에 대한 정보 recon X 때문에 반투명, 투명한 물체에 대해 recon X
-
 Neural volume논문에서 내부에 대한 정보도 복원하자는 취지로 Deep neural net을 이용해서 volume rendering 통해 다양한 광학적 특성을 가진 물체에 대해서 recon 가능해졌습니다. 
 
 <br/>
@@ -74,7 +70,6 @@ input으로 카메라의 위치인 x,y,z와 방향인 파이와 쎄타가 주어
 네트워크가 좀 더 효율적으로 고해상도의 영상을 표현할 수 있게 하기위해 positional encoding 기법을 사용합니다.
 
 왜냐하면, 
-
 1. input만으로 high-frequency 특징을 렌더링하기엔 한계가 있음
 2. deep network가 학습이 되는 동안 low-frequency 특징으로 편향되는 특징이 있음 
 3. input을 high frequency function을 사용하여 더 높은 차원에 맵핑한 후 네트워크에 입력으로 전달하면 네트워크가 high-frequency특징을 더 잘 표현할 수 있음
@@ -82,7 +77,6 @@ input으로 카메라의 위치인 x,y,z와 방향인 파이와 쎄타가 주어
 ![](https://velog.velcdn.com/images/soyekwon/post/16d412f6-794e-4ce5-a4dc-3e2b8fa0f82f/image.png)
 
 input인 위치 좌표와 방향 정보를 각 sin, cos에 맵핑함으로써 input을 더 높은 차원에 매핑
-
 NerF에선 3D (x : x,y,z) data: L=10, Viewing Direction(d): L=4 사용
 
 <br/>
