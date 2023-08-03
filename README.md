@@ -109,17 +109,14 @@ NerF에선 3D (x : x,y,z) data: L=10, Viewing Direction(d): L=4 사용
 NerF와 다른 모델들을 비교한 사진입니다. 
 
 ## Conclusion
-
 NeRF는  이전의 model보다 더 나은 품질의 렌더링 결과를 제공합니다. 
 -> high-frequency 특징을 더 잘 살린다던가, 카메라 포즈가 바껴도 consistent한 특징을 유지한다던가 
 하지만 여러 단점들이 존재합니다. 
-
 1. traing, inference 속도가 느림
 2. static한 물체에 대해서만 .. 
 3. 필요한 입력 이미지 수가 많음
 4. camera parameter 필요
 5. 조명이 변화면 렌더링 X
-
 따라서 이런 단점들을 개선하는 후속 연구들이 존재합니다. 
 
 
