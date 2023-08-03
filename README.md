@@ -1,5 +1,5 @@
 # NeRF
-<code>NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis 논문 읽고 코드로 구현<code/>
+<code>[NeRF](https://arxiv.org/pdf/2003.08934.pdf): Representing Scenes as Neural Radiance Fields for View Synthesis 논문 읽고 코드로 구현<code/>
 
 ## Introduction
 
@@ -22,7 +22,6 @@ input은 sparse한 이미지와 그에 해당하는 camera의 pose가 주어지�
 
 
 ## Related work
-
 **Neural volume**
 
 ![](https://velog.velcdn.com/images/soyekwon/post/c910818b-58aa-4ae4-9bd8-4793b1343696/image.png)
